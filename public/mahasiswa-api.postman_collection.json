@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "c8a14e9f-7c42-4f32-8df7-dncc-mahasiswa-api",
+		"name": "Mahasiswa API - Kelas Pemrograman Web",
+		"description": "Koleksi API untuk materi Consume (GET) dan Post (POST) data mahasiswa. Didesain ramah untuk pemula dan aman digunakan bersamaan oleh 30+ siswa.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "1. GET - List Semua Mahasiswa",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/mahasiswa",
+					"host": ["{{base_url}}"],
+					"path": ["api", "mahasiswa"]
+				},
+				"description": "Mengambil seluruh data mahasiswa yang tersimpan di sistem."
+			},
+			"response": []
+		},
+		{
+			"name": "2. GET - Cari & Filter Mahasiswa",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/mahasiswa?q=budi&jurusan=Informatika&angkatan=2023",
+					"host": ["{{base_url}}"],
+					"path": ["api", "mahasiswa"],
+					"query": [
+						{
+							"key": "q",
+							"value": "budi",
+							"description": "Pencarian nama atau NIM"
+						},
+						{
+							"key": "jurusan",
+							"value": "Informatika",
+							"description": "Filter jurusan"
+						},
+						{
+							"key": "angkatan",
+							"value": "2023",
+							"description": "Filter angkatan"
+						}
+					]
+				},
+				"description": "Contoh cara melakukan filtering / search data menggunakan query params."
+			},
+			"response": []
+		},
+		{
+			"name": "3. GET - Detail 1 Mahasiswa",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/mahasiswa/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "mahasiswa", "1"]
+				},
+				"description": "Mengambil detail 1 mahasiswa berdasarkan ID."
+			},
+			"response": []
+		},
+		{
+			"name": "4. POST - Tambah Mahasiswa Baru",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nama\": \"Farhan Ramadhan\",\n  \"nim\": \"A11.2024.16999\",\n  \"jurusan\": \"Teknik Informatika\",\n  \"angkatan\": 2024\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/mahasiswa",
+					"host": ["{{base_url}}"],
+					"path": ["api", "mahasiswa"]
+				},
+				"description": "Menambahkan data mahasiswa baru. NIM harus unik."
+			},
+			"response": []
+		},
+		{
+			"name": "5. PUT - Update Data Mahasiswa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nama\": \"Budi Santoso S.Kom\",\n  \"jurusan\": \"Teknik Informatika\",\n  \"angkatan\": 2023\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/mahasiswa/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "mahasiswa", "1"]
+				},
+				"description": "Memperbarui data mahasiswa berdasarkan ID."
+			},
+			"response": []
+		},
+		{
+			"name": "6. DELETE - Hapus Mahasiswa",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/mahasiswa/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "mahasiswa", "1"]
+				},
+				"description": "Menghapus data mahasiswa dari database berdasarkan ID."
+			},
+			"response": []
+		},
+		{
+			"name": "7. POST - Reset Database (Darurat)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/reset",
+					"host": ["{{base_url}}"],
+					"path": ["api", "reset"]
+				},
+				"description": "Mengembalikan data ke 10 mahasiswa awal seeder. Sangat berguna jika siswa salah hapus atau data kosong."
+			},
+			"response": []
+		}
+	]
+}
