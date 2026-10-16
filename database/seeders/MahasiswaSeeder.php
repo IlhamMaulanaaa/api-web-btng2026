@@ -8,11 +8,11 @@ use Illuminate\Database\Seeder;
 class MahasiswaSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Default dataset for students.
      */
-    public function run(): void
+    public static function defaultStudents(): array
     {
-        $mahasiswas = [
+        return [
             [
                 'nama' => 'Ilham Pratama',
                 'nim' => 'A11.2024.15656',
@@ -80,12 +80,34 @@ class MahasiswaSeeder extends Seeder
                 'angkatan' => 2024,
             ],
         ];
+    }
 
-        foreach ($mahasiswas as $data) {
+    /**
+     * Seed initial sample data for a specific ruang / workspace.
+     */
+    public static function seedForRuang(string $ruang = 'public'): int
+    {
+        $students = self::defaultStudents();
+
+        foreach ($students as $data) {
+            $data['ruang'] = $ruang;
             Mahasiswa::updateOrCreate(
-                ['nim' => $data['nim']],
+                [
+                    'ruang' => $ruang,
+                    'nim'   => $data['nim'],
+                ],
                 $data
             );
         }
+
+        return count($students);
+    }
+
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        self::seedForRuang('public');
     }
 }
