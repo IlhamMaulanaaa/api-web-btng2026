@@ -14,6 +14,7 @@ Route::match(['get', 'post'], '/reset', ResetController::class);
 
 // 2. Student Multi-Tenant Workspace Isolation (/api/{ruang}/mobil)
 Route::prefix('{ruang}')
+    ->as('workspace.')
     ->where(['ruang' => '^(?!mobil$|mahasiswa$|reset$|docs$)[a-zA-Z0-9_\-\.]+$'])
     ->group(function () {
         Route::apiResource('mobil', MobilController::class);
