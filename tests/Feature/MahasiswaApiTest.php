@@ -21,7 +21,7 @@ class MahasiswaApiTest extends TestCase
     {
         $response = $this->get('/');
         $response->assertStatus(200);
-        $response->assertSee('API Mahasiswa');
+        $response->assertSee('API Showroom Mobil');
     }
 
     public function test_can_list_all_mahasiswa(): void

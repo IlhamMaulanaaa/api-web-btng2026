@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panduan Praktik API Mahasiswa - Kelas Web BTNG</title>
+    <title>Panduan Praktik API Showroom Mobil - Kelas Web BTNG</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -43,11 +43,11 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-white font-extrabold text-xl shadow-md shadow-indigo-100">
-                    🎓
+                    🚗
                 </span>
                 <div>
-                    <h1 class="text-base font-bold text-slate-900 leading-tight">API Mahasiswa</h1>
-                    <p class="text-xs text-slate-500 font-medium">Bahan Praktikum Kelas Web BTNG</p>
+                    <h1 class="text-base font-bold text-slate-900 leading-tight">API Showroom Mobil</h1>
+                    <p class="text-xs text-slate-500 font-medium">Bahan Praktikum Kelas Web BTNG DNCC</p>
                 </div>
             </div>
 
@@ -58,7 +58,7 @@
                 </a>
                 <button onclick="resetDataSaya()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 transition">
                     <svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                    <span id="navResetLabel">Reset Data Saya</span>
+                    <span id="navResetLabel">Reset Showroom Saya</span>
                 </button>
             </div>
         </div>
@@ -68,21 +68,21 @@
     <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">
 
         <!-- INTRO HERO -->
-        <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-3xl p-6 sm:p-10 text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
+        <div class="bg-gradient-to-r from-indigo-600 via-indigo-700 to-indigo-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
             <div class="max-w-3xl space-y-4">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur">
                     ✨ Panduan Mudah untuk Pemula
                 </span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
-                    Belajar Menghubungkan Web ke API (CRUD Mahasiswa)
+                    Belajar Menghubungkan Web ke API (CRUD Showroom Mobil)
                 </h2>
                 <p class="text-indigo-100 text-sm sm:text-base leading-relaxed">
-                    Selamat datang di kelas! Di halaman ini, kalian akan belajar cara <strong>mengambil data mahasiswa</strong> untuk ditampilkan ke web, serta cara <strong>menambah, mengedit, dan menghapus data</strong> langsung lewat JavaScript.
+                    Selamat datang di kelas! Di halaman ini, kalian akan belajar cara <strong>mengambil data katalog mobil</strong> dengan foto HD dan harga Rupiah untuk ditampilkan ke web, serta cara <strong>menambah unit, mengubah harga & status sold, dan menghapus mobil</strong> langsung lewat JavaScript <code>fetch()</code>.
                 </p>
             </div>
         </div>
 
-        <!-- LANGKAH 1: PILIH KOTAK LATIHAN PRIBADI -->
+        <!-- LANGKAH 1: PILIH KAMAR LATIHAN PRIBADI -->
         <div class="bg-white rounded-2xl border-2 border-indigo-500/30 p-6 sm:p-8 shadow-sm space-y-6">
             <div class="flex items-start gap-4">
                 <div class="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-700 font-extrabold flex items-center justify-center shrink-0 text-lg">
@@ -90,10 +90,10 @@
                 </div>
                 <div class="space-y-1">
                     <h3 class="text-lg sm:text-xl font-bold text-slate-900">
-                        Buat "Kamar Latihan" Pribadi Kamu
+                        Buat "Kamar Showroom" Pribadi Kamu
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-500">
-                        Biar data latihanmu <strong>tidak terhapus atau tertukar</strong> dengan teman di sebelahmu, ketik nama panggilanmu atau NIM kamu di bawah ini:
+                        Biar unit mobil latihanmu <strong>tidak terhapus atau tertukar</strong> dengan teman di sebelahmu, ketik NIM UDINUS kamu atau nama panggilanmu di bawah ini:
                     </p>
                 </div>
             </div>
@@ -102,13 +102,13 @@
             <div class="flex flex-col sm:flex-row gap-3 pt-2">
                 <div class="relative flex-1">
                     <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                        👤
+                        🔑
                     </span>
-                    <input id="namaRuangInput" type="text" placeholder="Ketik nama panggilanmu (contoh: budi, siti, atau NIM kamu)"
+                    <input id="namaRuangInput" type="text" placeholder="Ketik NIM kamu (contoh: A11.2024.15656) atau nama panggilan"
                            class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition font-medium">
                 </div>
                 <button onclick="simpanKamar()" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-md shadow-indigo-200 transition shrink-0 flex items-center justify-center gap-2">
-                    <span>🚀 Pasang Kamar Saya</span>
+                    <span>🚀 Pasang Showroom Saya</span>
                 </button>
             </div>
 
@@ -117,7 +117,7 @@
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div class="flex items-center gap-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-900">Link API Khusus Kamu Saat Ini:</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-900">Link API Showroom Khusus Kamu Saat Ini:</span>
                     </div>
                     <span id="statusKamarText" class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-indigo-200 text-indigo-800">
                         Kamar Aktif: Umum (Public)
@@ -126,7 +126,7 @@
 
                 <div class="flex items-center gap-2 bg-white border border-indigo-200 rounded-xl p-2.5 sm:p-3">
                     <code id="activeApiUrl" class="text-xs sm:text-sm font-mono text-indigo-700 font-bold truncate flex-1 select-all">
-                        {{ url('/') }}/api/mahasiswa
+                        {{ url('/') }}/api/mobil
                     </code>
                     <button onclick="salinLinkKhusus(this)" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition flex items-center gap-1 shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
@@ -135,12 +135,12 @@
                 </div>
 
                 <p class="text-xs text-slate-500">
-                    💡 <strong>Tips:</strong> Salin link di atas dan tempelkan ke dalam kode <code>fetch()</code> tugas webmu. Server sudah otomatis menyiapkan 11 data mahasiswa contoh di dalam kamarmu!
+                    💡 <strong>Tips:</strong> Salin link di atas dan tempelkan ke dalam kode <code>fetch()</code> tugas webmu. Server sudah otomatis menyiapkan <strong>12 unit mobil contoh</strong> lengkap dengan foto HD di dalam showroom kamarmu!
                 </p>
             </div>
         </div>
 
-        <!-- LANGKAH 2: CARA MENGGUNAKAN API (4 OPERASI DASAR CRUD) -->
+        <!-- LANGKAH 2: CARA MENGGUNAKAN API (4 JURUS DASAR CRUD) -->
         <div class="space-y-4">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-700 font-extrabold flex items-center justify-center shrink-0 text-lg">
@@ -148,10 +148,10 @@
                 </div>
                 <div>
                     <h3 class="text-lg sm:text-xl font-bold text-slate-900">
-                        4 Jurus Dasar CRUD (Siap Pakai di Web Kamu)
+                        4 Jurus Dasar CRUD Mobil (Siap Pakai di Web Kamu)
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-500">
-                        Pilih operasi yang sedang ingin kamu kerjakan di tugasmu:
+                        Pilih operasi yang sedang ingin kamu kerjakan di tugas web showroom-mu:
                     </p>
                 </div>
             </div>
@@ -161,28 +161,28 @@
                 <button onclick="pilihJurus('jurusGet')" id="tabBtn-jurusGet" class="jurus-btn py-3 px-3 rounded-xl border-2 font-bold text-xs sm:text-sm text-left transition flex items-center gap-2.5 bg-indigo-600 text-white border-indigo-600 shadow-sm">
                     <span class="text-base">📖</span>
                     <div>
-                        <div class="font-bold">1. Ambil Data</div>
+                        <div class="font-bold">1. Ambil Katalog</div>
                         <div class="text-[10px] font-normal opacity-90">Method GET</div>
                     </div>
                 </button>
                 <button onclick="pilihJurus('jurusPost')" id="tabBtn-jurusPost" class="jurus-btn py-3 px-3 rounded-xl border-2 font-bold text-xs sm:text-sm text-left transition flex items-center gap-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
                     <span class="text-base">➕</span>
                     <div>
-                        <div class="font-bold">2. Tambah Data</div>
+                        <div class="font-bold">2. Tambah Mobil</div>
                         <div class="text-[10px] font-normal text-slate-500">Method POST</div>
                     </div>
                 </button>
                 <button onclick="pilihJurus('jurusPut')" id="tabBtn-jurusPut" class="jurus-btn py-3 px-3 rounded-xl border-2 font-bold text-xs sm:text-sm text-left transition flex items-center gap-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
                     <span class="text-base">✏️</span>
                     <div>
-                        <div class="font-bold">3. Ubah Data</div>
+                        <div class="font-bold">3. Ubah Harga / Status</div>
                         <div class="text-[10px] font-normal text-slate-500">Method PUT</div>
                     </div>
                 </button>
                 <button onclick="pilihJurus('jurusDelete')" id="tabBtn-jurusDelete" class="jurus-btn py-3 px-3 rounded-xl border-2 font-bold text-xs sm:text-sm text-left transition flex items-center gap-2.5 bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
                     <span class="text-base">🗑️</span>
                     <div>
-                        <div class="font-bold">4. Hapus Data</div>
+                        <div class="font-bold">4. Hapus Mobil</div>
                         <div class="text-[10px] font-normal text-slate-500">Method DELETE</div>
                     </div>
                 </button>
@@ -193,14 +193,14 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
-                            <span>📖</span> Menampilkan Daftar Mahasiswa ke Halaman Web
+                            <span>📖</span> Menampilkan Daftar Mobil ke Halaman Web
                         </h4>
-                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini saat halaman web pertama kali dibuka untuk menampilkan data ke dalam tabel atau kartu.</p>
+                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini saat halaman web pertama kali dibuka untuk merender kartu galeri mobil lengkap dengan foto & harga Rupiah.</p>
                     </div>
                     <button onclick="salinKode('code-get', this)" class="text-xs font-semibold px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition">Salin Kode</button>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-4 overflow-x-auto text-xs text-indigo-300">
-                    <pre id="code-get">// Kode JavaScript untuk mengambil data</pre>
+                    <pre id="code-get">// Kode JavaScript untuk mengambil katalog mobil</pre>
                 </div>
             </div>
 
@@ -209,14 +209,14 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
-                            <span>➕</span> Mengirim Data dari Form Tambah Mahasiswa
+                            <span>➕</span> Mengirim Data dari Form Tambah Mobil
                         </h4>
-                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini saat tombol "Simpan" di form formulir web kamu diklik.</p>
+                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini saat tombol "Simpan Mobil" di form formulir web kamu diklik.</p>
                     </div>
                     <button onclick="salinKode('code-post', this)" class="text-xs font-semibold px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition">Salin Kode</button>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-4 overflow-x-auto text-xs text-indigo-300">
-                    <pre id="code-post">// Kode JavaScript untuk mengirim data baru</pre>
+                    <pre id="code-post">// Kode JavaScript untuk mengirim data mobil baru</pre>
                 </div>
             </div>
 
@@ -225,14 +225,14 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
-                            <span>✏️</span> Mengubah / Mengedit Data Mahasiswa
+                            <span>✏️</span> Mengubah Harga atau Menandai Status "Sold"
                         </h4>
-                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini untuk memperbarui data mahasiswa berdasarkan nomor ID-nya.</p>
+                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini untuk memperbarui harga atau status ketersediaan unit berdasarkan nomor ID-nya.</p>
                     </div>
                     <button onclick="salinKode('code-put', this)" class="text-xs font-semibold px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition">Salin Kode</button>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-4 overflow-x-auto text-xs text-indigo-300">
-                    <pre id="code-put">// Kode JavaScript untuk update data</pre>
+                    <pre id="code-put">// Kode JavaScript untuk update data mobil</pre>
                 </div>
             </div>
 
@@ -241,14 +241,14 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <h4 class="font-bold text-slate-900 text-base flex items-center gap-2">
-                            <span>🗑️</span> Menghapus Data Mahasiswa
+                            <span>🗑️</span> Menghapus Unit Mobil dari Showroom
                         </h4>
-                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini saat tombol icon tempat sampah / "Hapus" pada tabel diklik.</p>
+                        <p class="text-xs text-slate-500 mt-1">Gunakan kode ini saat tombol icon tempat sampah / "Hapus" pada kartu diklik.</p>
                     </div>
                     <button onclick="salinKode('code-delete', this)" class="text-xs font-semibold px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition">Salin Kode</button>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-4 overflow-x-auto text-xs text-indigo-300">
-                    <pre id="code-delete">// Kode JavaScript untuk menghapus data</pre>
+                    <pre id="code-delete">// Kode JavaScript untuk menghapus data mobil</pre>
                 </div>
             </div>
 
@@ -263,42 +263,61 @@
                     </div>
                     <div>
                         <h3 class="text-lg sm:text-xl font-bold text-slate-900">
-                            Uji Coba Langsung (Live Preview)
+                            Uji Coba Langsung (Live Preview Showroom)
                         </h3>
                         <p class="text-xs sm:text-sm text-slate-500">
-                            Lihat bagaimana data mahasiswa di kamarmu tampil di layar:
+                            Lihat bagaimana katalog mobil di kamarmu tampil nyata di layar:
                         </p>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-2">
-                    <button onclick="ambilDataSekarang()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-100 transition flex items-center gap-1.5">
-                        <span>▶️ Tarik Data Mahasiswa</span>
+                <div class="flex items-center gap-2 flex-wrap">
+                    <select id="filterBrand" onchange="ambilDataSekarang()" class="text-xs rounded-xl border border-slate-300 px-3 py-2 bg-white text-slate-700 font-medium focus:ring-indigo-500">
+                        <option value="">Semua Brand</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Mitsubishi">Mitsubishi</option>
+                        <option value="Suzuki">Suzuki</option>
+                        <option value="Wuling">Wuling</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Daihatsu">Daihatsu</option>
+                        <option value="BYD">BYD</option>
+                    </select>
+
+                    <select id="filterStatus" onchange="ambilDataSekarang()" class="text-xs rounded-xl border border-slate-300 px-3 py-2 bg-white text-slate-700 font-medium focus:ring-indigo-500">
+                        <option value="">Semua Status</option>
+                        <option value="tersedia">Tersedia</option>
+                        <option value="sold">Sold</option>
+                    </select>
+
+                    <button onclick="ambilDataSekarang()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-100 transition flex items-center gap-1.5">
+                        <span>▶️ Tarik Katalog</span>
                     </button>
-                    <button onclick="toggleTampilanHasil()" id="btnToggleTampilan" class="px-3 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition">
+                    <button onclick="toggleTampilanHasil()" id="btnToggleTampilan" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition">
                         Lihat JSON Mentah
                     </button>
                 </div>
             </div>
 
             <!-- HASIL DALAM BENTUK KARTU (RAMAH ORANG AWAM) -->
-            <div id="tampilanVisual" class="space-y-3">
+            <div id="tampilanVisual" class="space-y-4">
                 <div class="flex items-center justify-between text-xs text-slate-500 px-1">
-                    <span id="labelJumlahData">Menampilkan data mahasiswa bawaan...</span>
+                    <span id="labelJumlahData">Menampilkan data showroom bawaan...</span>
                     <span class="text-emerald-600 font-semibold">● Terhubung ke Server</span>
                 </div>
 
-                <div id="daftarKartuMahasiswa" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    <div class="p-6 text-center text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-200 col-span-full">
-                        Klik tombol <strong>"▶️ Tarik Data Mahasiswa"</strong> di atas untuk melihat isi kamarmu.
+                <div id="daftarKartuMobil" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-8 text-center text-slate-400 bg-slate-50 rounded-2xl border border-dashed border-slate-200 col-span-full">
+                        Klik tombol <strong>"▶️ Tarik Katalog"</strong> di atas untuk memuat unit mobil.
                     </div>
                 </div>
             </div>
 
             <!-- HASIL DALAM BENTUK JSON (UNTUK KEBUTUHAN DEBUG) -->
             <div id="tampilanJson" class="hidden space-y-2">
-                <div class="bg-slate-950 rounded-xl p-4 max-h-72 overflow-auto">
-                    <pre id="rawJsonPre" class="text-xs font-mono text-emerald-400 leading-relaxed">// Hasil respon JSON mentah akan muncul di sini...</pre>
+                <div class="bg-slate-950 rounded-xl p-4 max-h-80 overflow-auto">
+                    <pre id="rawJsonPre" class="text-xs font-mono text-emerald-400 leading-relaxed">// Respon JSON mentah dari server akan muncul di sini...</pre>
                 </div>
             </div>
         </div>
@@ -308,14 +327,14 @@
             <div class="flex items-start gap-3">
                 <span class="text-2xl">🚑</span>
                 <div class="space-y-0.5">
-                    <h4 class="font-bold text-amber-900 text-sm">Datamu Tidak Sengaja Terhapus Semua atau Berantakan?</h4>
+                    <h4 class="font-bold text-amber-900 text-sm">Showroom Berantakan atau Semua Mobil Tidak Sengaja Terhapus?</h4>
                     <p class="text-xs text-amber-800">
-                        Jangan panik! Klik tombol reset untuk mengembalikan 11 data mahasiswa contoh awal ke dalam kamarmu.
+                        Jangan panik! Klik tombol reset untuk mengembalikan 12 unit mobil contoh awal ke dalam kamarmu. Data teman lain aman 100%.
                     </p>
                 </div>
             </div>
             <button onclick="resetDataSaya()" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl shadow-sm transition shrink-0">
-                🔄 Kembalikan Data Contoh
+                🔄 Kembalikan 12 Mobil Contoh
             </button>
         </div>
 
@@ -323,7 +342,7 @@
 
     <!-- Footer -->
     <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500 mt-12">
-        API Mahasiswa • Dibuat khusus untuk bahan praktikum siswa di Kelas Web BTNG (DNCC UDINUS)
+        API Showroom Mobil • Dibuat khusus untuk bahan praktikum siswa di Kelas Web BTNG (DNCC UDINUS)
     </footer>
 
     <!-- Logic Script -->
@@ -337,9 +356,9 @@
 
         function getUrlKamar() {
             if (!kamarAktif) {
-                return `${HOST_URL}/api/mahasiswa`;
+                return `${HOST_URL}/api/mobil`;
             }
-            return `${HOST_URL}/api/${encodeURIComponent(kamarAktif)}/mahasiswa`;
+            return `${HOST_URL}/api/${encodeURIComponent(kamarAktif)}/mobil`;
         }
 
         function getUrlReset() {
@@ -347,6 +366,14 @@
                 return `${HOST_URL}/api/reset`;
             }
             return `${HOST_URL}/api/${encodeURIComponent(kamarAktif)}/reset`;
+        }
+
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumFractionDigits: 0
+            }).format(angka || 0);
         }
 
         function updateTampilan() {
@@ -379,72 +406,78 @@
         function perbaruiContohKode(endpoint) {
             // Jurus 1: GET
             document.getElementById('code-get').innerText =
-`// 1. Ambil daftar mahasiswa
+`// 1. Ambil daftar mobil dari showroom
 fetch('${endpoint}')
   .then(response => response.json())
   .then(hasil => {
-    console.log('Data diterima:', hasil.data);
-    // Sekarang kamu bisa lakukan perulangan (loop) untuk menampilkan ke HTML:
-    hasil.data.forEach(mhs => {
-      console.log(mhs.nama + ' - ' + mhs.nim);
+    console.log('Total Mobil:', hasil.total);
+    // Tampilkan setiap mobil ke kartu HTML:
+    hasil.data.forEach(mobil => {
+      console.log(mobil.nama + ' - Rp ' + mobil.harga.toLocaleString('id-ID'));
     });
   })
   .catch(error => console.error('Gagal mengambil data:', error));`;
 
             // Jurus 2: POST
             document.getElementById('code-post').innerText =
-`// 2. Tambah mahasiswa baru
-const mahasiswaBaru = {
-  nama: 'Farhan Ramadhan',
-  nim: 'A11.2024.19999',       // Format NIM: A11.Tahun.Nomor (Contoh: A11.2024.19999)
-  jurusan: 'Teknik Informatika',
-  angkatan: 2024
+`// 2. Tambah mobil baru ke showroom
+const mobilBaru = {
+  nama: 'Toyota Yaris GR Sport',
+  brand: 'Toyota',
+  harga: 345000000,
+  tahun: 2024,
+  transmisi: 'CVT',              // Pilihan: Manual | Matic | CVT
+  bahan_bakar: 'Bensin',          // Pilihan: Bensin | Diesel | Hybrid | Listrik
+  status: 'tersedia',            // Pilihan: tersedia | sold
+  foto: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80'
 };
 
 fetch('${endpoint}', {
   method: 'POST',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
   },
-  body: JSON.stringify(mahasiswaBaru)
+  body: JSON.stringify(mobilBaru)
 })
   .then(response => response.json())
   .then(hasil => {
     if (hasil.success) {
-      alert('Berhasil menambah mahasiswa!');
+      alert('Mobil berhasil ditambahkan ke showroom!');
     } else {
-      alert('Gagal: ' + hasil.message);
+      alert('Validasi Gagal: ' + hasil.message);
     }
   });`;
 
             // Jurus 3: PUT
             document.getElementById('code-put').innerText =
-`// 3. Ubah data mahasiswa (Ganti angka 1 dengan ID mahasiswa yang mau diedit)
+`// 3. Ubah harga atau status mobil (Ganti angka 1 dengan ID mobil)
 const idTarget = 1;
 
 fetch('${endpoint}/' + idTarget, {
   method: 'PUT',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
   },
   body: JSON.stringify({
-    nama: 'Nama yang Sudah Diubah',
-    jurusan: 'Sistem Informasi'
+    status: 'sold'   // Tandai sudah terjual!
   })
 })
   .then(response => response.json())
-  .then(hasil => alert('Data berhasil diperbarui!'));`;
+  .then(hasil => alert('Status mobil berhasil diubah menjadi SOLD!'));`;
 
             // Jurus 4: DELETE
             document.getElementById('code-delete').innerText =
-`// 4. Hapus mahasiswa (Ganti angka 1 dengan ID mahasiswa yang mau dihapus)
+`// 4. Hapus mobil dari showroom (Ganti angka 1 dengan ID mobil)
 const idTarget = 1;
 
 fetch('${endpoint}/' + idTarget, {
-  method: 'DELETE'
+  method: 'DELETE',
+  headers: { 'Accept': 'application/json' }
 })
   .then(response => response.json())
-  .then(hasil => alert('Data mahasiswa berhasil dihapus!'));`;
+  .then(hasil => alert('Mobil berhasil dihapus dari showroom!'));`;
         }
 
         function simpanKamar() {
@@ -457,7 +490,7 @@ fetch('${endpoint}/' + idTarget, {
             localStorage.setItem('btng_kamar_siswa', kamarAktif);
             updateTampilan();
             ambilDataSekarang();
-            alert(`Kamar '${kamarAktif}' aktif! Sekarang kamu punya kamar latihan sendiri.`);
+            alert(`Kamar '${kamarAktif}' aktif! Sekarang kamu punya kamar showroom latihan sendiri.`);
         }
 
         function salinLinkKhusus(btn) {
@@ -497,57 +530,85 @@ fetch('${endpoint}/' + idTarget, {
         }
 
         async function ambilDataSekarang() {
-            const container = document.getElementById('daftarKartuMahasiswa');
+            const container = document.getElementById('daftarKartuMobil');
             const preJson = document.getElementById('rawJsonPre');
             const labelTotal = document.getElementById('labelJumlahData');
 
-            container.innerHTML = '<div class="p-6 text-center text-slate-400 col-span-full">Mengambil data dari server...</div>';
+            container.innerHTML = '<div class="p-8 text-center text-slate-400 col-span-full">Mengambil data mobil dari server...</div>';
             preJson.innerText = 'Mengambil data...';
 
+            let url = getUrlKamar();
+            const brand = document.getElementById('filterBrand')?.value;
+            const status = document.getElementById('filterStatus')?.value;
+            const params = new URLSearchParams();
+            if (brand) params.append('brand', brand);
+            if (status) params.append('status', status);
+            const queryString = params.toString();
+            if (queryString) {
+                url += '?' + queryString;
+            }
+
             try {
-                const res = await fetch(getUrlKamar());
+                const res = await fetch(url);
                 const data = await res.json();
                 preJson.innerText = JSON.stringify(data, null, 2);
 
                 if (data.success && data.data && data.data.length > 0) {
-                    labelTotal.innerText = `Menampilkan ${data.data.length} mahasiswa di kamarmu`;
+                    labelTotal.innerText = `Menampilkan ${data.data.length} mobil di showroom kamarmu`;
                     let html = '';
-                    data.data.forEach(mhs => {
+                    data.data.forEach(m => {
+                        const isSold = m.status === 'sold';
+                        const badgeColor = isSold ? 'bg-rose-100 text-rose-800' : 'bg-emerald-100 text-emerald-800';
+                        const fallbackImg = 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80';
+                        const imgUrl = m.foto || fallbackImg;
+
                         html += `
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:border-indigo-300 transition space-y-2">
-                            <div class="flex items-start justify-between">
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-50 text-indigo-700 font-mono">
-                                    ID: ${mhs.id}
-                                </span>
-                                <span class="text-[11px] text-slate-400 font-medium font-mono">${mhs.nim}</span>
+                        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                            <div class="relative h-44 w-full bg-slate-100">
+                                <img src="${imgUrl}" alt="${m.nama}" class="w-full h-full object-cover" onerror="this.src='${fallbackImg}'">
+                                <div class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur text-white text-[10px] font-bold px-2 py-0.5 rounded-lg font-mono">
+                                    ID: ${m.id}
+                                </div>
+                                <div class="absolute top-3 right-3 font-bold text-[10px] px-2.5 py-0.5 rounded-full ${badgeColor}">
+                                    ${m.status.toUpperCase()}
+                                </div>
                             </div>
-                            <div>
-                                <h5 class="font-bold text-slate-900 text-sm">${mhs.nama}</h5>
-                                <p class="text-xs text-slate-500">${mhs.jurusan} (${mhs.angkatan})</p>
+                            <div class="p-4 space-y-2 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                                        ${m.brand} • ${m.tahun}
+                                    </div>
+                                    <h4 class="font-bold text-slate-900 text-base leading-tight mt-0.5">${m.nama}</h4>
+                                    <p class="text-indigo-600 font-extrabold text-lg mt-1">${formatRupiah(m.harga)}</p>
+                                </div>
+                                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                                    <span class="inline-flex items-center gap-1">⚙️ ${m.transmisi}</span>
+                                    <span class="inline-flex items-center gap-1">⛽ ${m.bahan_bakar}</span>
+                                </div>
                             </div>
                         </div>`;
                     });
                     container.innerHTML = html;
                 } else {
-                    labelTotal.innerText = 'Kamar masih kosong';
-                    container.innerHTML = '<div class="p-6 text-center text-slate-400 col-span-full">Belum ada data mahasiswa di kamar ini.</div>';
+                    labelTotal.innerText = 'Showroom kosong';
+                    container.innerHTML = '<div class="p-8 text-center text-slate-400 col-span-full">Tidak ada mobil yang cocok dengan filter atau showroom masih kosong.</div>';
                 }
             } catch (err) {
-                container.innerHTML = `<div class="p-6 text-center text-rose-500 col-span-full">Gagal mengambil data: ${err.message}</div>`;
+                container.innerHTML = `<div class="p-8 text-center text-rose-500 col-span-full">Gagal mengambil data: ${err.message}</div>`;
                 preJson.innerText = 'Error: ' + err.message;
             }
         }
 
         async function resetDataSaya() {
             const nama = kamarAktif || 'Umum';
-            if (!confirm(`Kembalikan data di kamar '${nama}' ke 11 data contoh awal?`)) {
+            if (!confirm(`Kembalikan data showroom di kamar '${nama}' ke 12 mobil contoh awal?`)) {
                 return;
             }
 
             try {
                 const res = await fetch(getUrlReset(), { method: 'POST' });
                 const hasil = await res.json();
-                alert(hasil.message || 'Data berhasil dikembalikan ke kondisi awal!');
+                alert(hasil.message || 'Showroom berhasil di-reset ke 12 unit mobil awal!');
                 ambilDataSekarang();
             } catch (err) {
                 alert('Gagal mereset: ' + err.message);
